@@ -1,6 +1,9 @@
 FROM tomcat:latest
 
-MAINTAINER AR Shankar
+MAINTAINER c.karthik2896@gmail.com
 
-COPY ./webapp.war /usr/local/tomcat/webapps
+WORKDIR /usr/local/tomcat/webapps/webapps.dist
 
+COPY * /usr/local/tomcat/webapps/.
+
+CMD ["catalina.sh", "run"]
